@@ -1,0 +1,29 @@
+<div class="container">
+    <h1>Password Generator</h1>
+    <div>
+        <label for="length">Enter length: </label>
+        <input #length (input)="onChangeLength(length.value)" type="number" id="length">
+    </div>
+
+    <div>
+        <label for="letters">Use letters</label>
+        <input (change)="onLetterChange()" type="checkbox" id="letters">
+    </div>
+    
+    <div>
+        <label for="numbers">Use numbers</label>
+        <input (change)="onNumbersChange()" type="checkbox" id="numbers">
+    </div>
+    
+    <div>
+        <label for="symbols">Use symbols</label>
+        <input (change)="onSymbolsChange()" type="checkbox" id="symbols">
+    </div>
+
+    <button (click)="onButtonClicked()">Generate!</button>
+
+    <div>
+        <label for="password">Your Password </label>
+        <input type="text" id="password" [value]="password">
+    </div>
+</div>
