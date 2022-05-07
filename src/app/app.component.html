@@ -1,29 +1,36 @@
-<div class="container">
-    <h1>Password Generator</h1>
-    <div>
-        <label for="length">Enter length: </label>
-        <input #length (input)="onChangeLength(length.value)" type="number" id="length">
+<div class="container card p-6 mt-5">
+    <h1 class="title has-text-link">Password Generator</h1>
+    <div class="field">
+        <label class="label" for="length">Enter length: </label>
+        <input class="input" #length (input)="onChangeLength(length.value)" id="length">
     </div>
 
     <div>
-        <label for="letters">Use letters</label>
-        <input (change)="onLetterChange()" type="checkbox" id="letters">
-    </div>
-    
-    <div>
-        <label for="numbers">Use numbers</label>
-        <input (change)="onNumbersChange()" type="checkbox" id="numbers">
-    </div>
-    
-    <div>
-        <label for="symbols">Use symbols</label>
-        <input (change)="onSymbolsChange()" type="checkbox" id="symbols">
+        <label class="checkbox d-block">
+            <input (change)="onLetterChange()" type="checkbox">
+            Use letters
+        </label>
     </div>
 
-    <button (click)="onButtonClicked()">Generate!</button>
+    <div>
+        <label class="checkbox">
+            <input (change)="onNumbersChange()" type="checkbox">
+            Use numbers
+        </label>
+    </div>
 
     <div>
-        <label for="password">Your Password </label>
-        <input type="text" id="password" [value]="password">
+        <label class="checkbox">
+            <input (change)="onSymbolsChange()" type="checkbox">
+            Use symbols
+        </label>
+    </div>
+        
+    <button class="button is-link is-fullwidth mt-4 mb-4" [disabled]="!(length && includeLetters || includeNumbers || includeSymbols)"
+        (click)="onButtonClicked()">Generate!</button>
+
+    <div class="field box" *ngIf="password">
+        <label class="label" for="password">Your Password </label>
+        <input class="input" type="text" id="password" [value]="password">
     </div>
 </div>
