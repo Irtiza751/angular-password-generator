@@ -12,6 +12,12 @@ export class AppComponent {
   includeNumbers = false;
   includeSymbols = false;
 
+  friends = [
+    {name: 'Huzaifa'},
+    {name: 'Faraz'},
+    {name: 'Junaid'},
+  ];
+
   onChangeLength(value: string) {
     const parsedValue = parseInt(value);
 
