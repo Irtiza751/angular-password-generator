@@ -17,3 +17,5 @@ Run `ng build` OR `ng build --prod` to build the project. The build artifacts wi
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+Learn about unit test & end to end test
